@@ -10,7 +10,6 @@ predicates
 clauses 
 	node (a,b,c,d,n).
 	node (b,n,m,n,a).
-	node (b,n,m,n,c).
 	node (c,r,n,s,a).
 	node (d,y,w,t,a).
 	node (m,l,n,f,b).
@@ -19,10 +18,11 @@ clauses
 	node (y,n,n,n,d).
 	node (w,n,n,n,d).
 	node (t,n,n,n,d).
+
 	%win node . 
 	node (g,n,n,n,z).
+
 	node (z,g,n,e,s).
-	node (z,g,n,e,w).
 	node (e,n,n,n,z).
 	node (l,n,n,n,m).
 	node (f,n,n,n,m).
@@ -35,7 +35,7 @@ clauses
 		write("\n make disession : - \n  \n f-foreword . \n b-backword .").
 	
 	question (c):-
-		write("\n make disession : - \n r- Righ. \n f-foreword . \n l-left . \n b-backword").
+		write("\n make disession : - \n r- Righ. \n l-left . \n b-backword").
 		
 	question (d):-
 		write("\n make disession : - \n r- Righ. \n f-foreword . \n l-left .").
@@ -95,8 +95,8 @@ clauses
 		node(Current,_,_,Choose,Father),
 		moveTo(Choose,Current),!.
 		
-	switch(Current,Father,w):- 
-		moveTo(Father,Current),!.
+	switch(_,Father,w):- 
+		moveTo(Father,_),!.
 	
 	switch(Current,Father,_):- 
 		write("that option nat avalible .\n "), 
